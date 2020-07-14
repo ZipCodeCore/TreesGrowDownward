@@ -26,15 +26,17 @@ The first operation we're going to cover is the insertion of new nodes.
 
 First, we have to find the place where we want to add a new node in order to keep the tree sorted. We'll follow these rules starting from the root node:
 
-if the new node's value is lower than the current node's, we go to the left child
-if the new node's value is greater than the current node's, we go to the right child
-when the current node is null, we've reached a leaf node and we can insert the new node in that position
-
 `private Node addRecursive(Node current, Integer value)`
+
+- if current node is null, we've reached a leaf node and we can insert the new node in that position
+- if the new node's value is lower than the current node's, we call addRecurive on the left child
+- if the new node's value is greater than the current node's, we call addRecurive on the right child
 
 Next, we'll create the public method that starts the recursion from the root node:
 
 `public void add(Integer value)`
+
+- we set this.root to `addRecursive` for the value object.
 
 The idea is to create two methods that allow you to do this:
 Now let's see how we can use this method to create the tree from our example:
@@ -76,7 +78,7 @@ If neither case is true, we change the state and call the method itself with cha
     - call containsNodeRecursive on current's left node
     - otherwise call is on the right node.
     
-Build a simple start method to the recursion:
+Build a simple start method to the recursion much like we did with the `add` and `addRecursive` methods:
 `public boolean containsNode(Integer value) `
 
 These two methods need to be able to pass a test like this one:
