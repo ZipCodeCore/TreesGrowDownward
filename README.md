@@ -1,8 +1,6 @@
 # TreesGrowDownward
 build a simple sorted binary tree contains Integer objects.
 
-Binary Tree
-
 A binary tree is a _recursive data structure_ where each node can have 2 children at most.
 
 A common type of binary tree is a binary search tree, in which every node has a value that is greater
@@ -18,7 +16,9 @@ Now, what operations do yo need to implement in TreeOneZero.java?
 
 ## Some Common Operations
 
-Now, let's see the most common operations we can perform on a binary tree.
+Now, let's see the most common operations we can perform on a binary tree. You should step through each operation,
+adding the methods described. You'll be making all these changes to class __TreeOneZero__, a special
+binary tree class.
 
 ### Inserting Elements
 
@@ -40,8 +40,8 @@ The idea is to create two methods that allow you to do this:
 Now let's see how we can use this method to create the tree from our example:
 
 ```
-private BinaryTree createBinaryTree() {
-    BinaryTree bt = new BinaryTree();
+private TreeOneZero createBinaryTree() {
+    TreeOneZero bt = new TreeOneZero();
  
     bt.add(Integer(6));
     bt.add(Integer(4));
@@ -65,7 +65,7 @@ based on the current status of the method.
 
 As before, we'll first create a recursive method that traverses the tree:
 
-`private boolean containsNodeRecursive(Node current, int value)`
+`private boolean containsNodeRecursive(Node current, Integer value)`
 
 And it will have two __base cases__, one which returns false, and another which return true. 
 If neither case is true, we change the state and call the method itself with changed parameters:
@@ -77,7 +77,7 @@ If neither case is true, we change the state and call the method itself with cha
     - otherwise call is on the right node.
     
 Build a simple start method to the recursion:
-`public boolean containsNode(int value) `
+`public boolean containsNode(Integer value) `
 
 These two methods need to be able to pass a test like this one:
 
@@ -102,7 +102,7 @@ then define a starter method that kicks off the recursion.
 
 First, we have to find the node to delete in a similar way as we did before:
 
-`private Node deleteRecursive(Node current, int value)`
+`private Node deleteRecursive(Node current, Integer value)`
 
 Notice here, we want to return the Node we are removing.
 
@@ -142,7 +142,7 @@ return current;
 
 Finally, let's create the public method that starts the deletion from the root:
 
-`public void delete(int value)`
+`public void delete(Integer value)`
 
 Now, let's check that the deletion works as expected:
 
