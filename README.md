@@ -159,7 +159,7 @@ public void givenABinaryTree_WhenDeletingElements_ThenTreeDoesNotContainThoseEle
 }
 ```
 
-### Traversing the Tree
+### Traversing (Walking or Visiting) the Tree
 
 In this section, we'll see different ways of traversing a tree, covering in detail the depth-first and breadth-first searches.
 
